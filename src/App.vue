@@ -26,14 +26,9 @@ import { RouterLink, RouterView } from "vue-router";
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
-
 .logo {
   display: block;
-  margin: 0 auto 1rem;
+  margin: 0.5rem auto 0;
 }
 
 nav {
@@ -41,12 +36,12 @@ nav {
   font-size: 12px;
   display: flex;
   justify-content: center;
-  margin: 2rem 0;
+  margin: 0.6rem 0;
   gap: 1.3rem;
 }
 .nav-link {
   background-color: rgb(250, 248, 245);
-  border: 2px solid #373bc8;
+  /* border: 2px solid #373bc8; */
   color: #373bc8;
   font-weight: 600;
   text-align: center;
@@ -57,13 +52,13 @@ nav {
 }
 
 .nav-link.router-link-exact-active {
-  border: 2px solid #373bc8;
+  /* border: 2px solid #373bc8; */
   box-shadow: 0px 0px 0px #373bc8;
   transform: translate(0px, 0px);
 }
 
 .nav-link.router-link-active {
-  border: 2px solid #373bc8;
+  /* border: 2px solid #373bc8; */
   transform: translate(0px, 0px);
   box-shadow: 0px 0px 0px #373bc8;
 }
@@ -71,13 +66,14 @@ nav {
 .router-view {
   padding: 2rem 1rem;
   height: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 @media (min-width: 1024px) {
   header {
     display: flex;
     place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
   }
 
   .logo {
