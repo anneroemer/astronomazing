@@ -8,19 +8,21 @@ import { RouterLink, RouterView } from "vue-router";
       src="@/assets/logo-no-background.svg"
       alt="logo"
       width="200"
-      height="200"
+      height="130"
       class="logo"
     />
 
     <div class="wrapper">
       <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/" class="nav-link"><p>home</p> </RouterLink>
+        <RouterLink to="/about" class="nav-link"><p>about</p> </RouterLink>
       </nav>
     </div>
   </header>
 
-  <RouterView />
+  <div class="router-view">
+    <RouterView />
+  </div>
 </template>
 
 <style scoped>
@@ -31,31 +33,44 @@ header {
 
 .logo {
   display: block;
-  margin: 0 auto 2rem;
+  margin: 0 auto 1rem;
 }
 
 nav {
   width: 100%;
   font-size: 12px;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+  gap: 1.3rem;
 }
-
-nav a.router-link-exact-active {
+.nav-link {
+  background-color: rgb(250, 248, 245);
+  border: 2px solid #373bc8;
   color: #373bc8;
+  font-weight: 600;
+  text-align: center;
+  padding: 0.5rem 2rem;
+  box-shadow: 4px 4px 0px #373bc8;
+  transform: translate(-3px, -3px);
+  transition: 0.4s;
 }
 
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
+.nav-link.router-link-exact-active {
+  border: 2px solid #373bc8;
+  box-shadow: 0px 0px 0px #373bc8;
+  transform: translate(0px, 0px);
 }
 
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
+.nav-link.router-link-active {
+  border: 2px solid #373bc8;
+  transform: translate(0px, 0px);
+  box-shadow: 0px 0px 0px #373bc8;
 }
 
-nav a:first-of-type {
-  border: 0;
+.router-view {
+  padding: 2rem 1rem;
+  height: 100%;
 }
 
 @media (min-width: 1024px) {
@@ -79,7 +94,6 @@ nav a:first-of-type {
     text-align: left;
     margin-left: -1rem;
     font-size: 1rem;
-
     padding: 1rem 0;
   }
 }

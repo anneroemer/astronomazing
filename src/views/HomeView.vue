@@ -15,25 +15,22 @@ created();
 
 <template>
   <main>
-    <div>
-      <div class="home-image">
-        <img :src="data?.value.url" alt="" class="home-image-item" />
-      </div>
-      <p>{{ data?.value.date }} | {{ data?.value.title }}</p>
-      <p>{{ data?.value.explanation }}</p>
+    <div class="home-image">
+      <img :src="data?.value.url" alt="" class="home-image-item" />
     </div>
+    <p>{{ data?.value.date }} | {{ data?.value.title }}</p>
   </main>
 </template>
 
 <style lang="scss">
 .home-image {
-  max-width: 500px;
-  //width: 100%;
-  height: 200px;
+  height: 400px;
+  overflow: hidden;
   &-item {
+    max-width: 500px;
     width: 100%;
     height: auto;
-    object-fit: cover;
+    object-fit: fill;
   }
 }
 </style>

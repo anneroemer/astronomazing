@@ -1,24 +1,23 @@
-@import './base.css';
+@import "./base.css";
 
 #app {
   max-width: 1280px;
+  width: 100vw;
   margin: 0 auto;
-  padding: 2rem;
-
-  font-weight: normal;
 }
 
-a,
-.green {
+body {
+  height: 100vh;
+  background-color: rgb(250, 248, 245);
+  background-image: radial-gradient(circle, #373bc8 10%, transparent 10%),
+    radial-gradient(circle, #373bc8 10%, transparent 10%);
+  background-size: 20px 20px;
+  background-position: 0 0, 50px 50px;
+}
+
+a {
   text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-}
-
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
+  color: inherit;
 }
 
 @media (min-width: 1024px) {
@@ -30,6 +29,5 @@ a,
   #app {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
   }
 }
