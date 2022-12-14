@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import axios from "axios";
 import IconArrow from "../components/icons/IconArrow.vue";
-
 import { ref } from "vue";
 import IconLogoPlanet from "../components/icons/IconLogoPlanet.vue";
 
@@ -12,6 +11,7 @@ const getData = () => {
   axios
     .get(
       `https://api.nasa.gov/planetary/apod?api_key=g4Cgb4KqIZPEorx3unUxCCGPkqxRa0bupphRQ5r7`
+      // `https://api.nasa.gov/planetary/apod?api_key=${process.env.VUE_APP_NASA_KEY}`
     )
     .then((response) => {
       console.log("NASA: ", response.data);
